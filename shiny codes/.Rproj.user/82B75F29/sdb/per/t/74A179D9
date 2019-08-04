@@ -1,0 +1,17 @@
+{
+    "contents" : "#You would need to update this path based on where you have saved the productivity file\n#You would need to open in browser to see the results properly\nproductivity <- read.csv(\"C:/Users/Rafey/Downloads/productivity.csv\")\nattach(productivity)\n\n#Requires shiny and googleevis library\nlibrary(shiny)\nlibrary (googleVis)\n\n# the following code creates the slider which we can use to change the year for each state\nshinyUI(fluidPage(\n  titlePanel(\"GSP Per Year\"),\n  sidebarPanel(sliderInput(\"YR\", \"Select Year:\", min = 1970, max = 1986, value = 500)),\n  mainPanel(\n    h3(textOutput(\"year\")), \n    htmlOutput(\"gvis\"))\n))\n\n",
+    "created" : 1460081971087.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "441888055",
+    "id" : "74A179D9",
+    "lastKnownWriteTime" : 1460082036,
+    "path" : "C:/Users/Rafey/Downloads/R code/R code/shiny/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

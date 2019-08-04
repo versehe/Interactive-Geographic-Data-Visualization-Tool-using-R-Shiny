@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#You would need to update this path based on where you have saved the productivity file\nproductivity <- read.csv(\"C:/Users/verse/Desktop/R code/productivity.csv\")\nattach(productivity)\n\n#Requires shiny and googleevis library\nlibrary(shiny)\nlibrary (googleVis)\n\n#the following code allows us to create a function which outputs the the entire map of US \n#the color represents the GSP per state. \nshinyServer(function(input, output)\n{\n  myYear = reactive({ input$YR })\n  output$year <- renderText({myYear()})\n  output$gvis <- renderGvis({\n    mydata<-subset(productivity,(YR > (myYear()-1)) & (YR < (myYear()+1)))\n    gvisGeoChart(mydata,\n                 locationvar =\"STATE\", colorvar=\"GSP\", \n                 options = list(region=\"US\", displayMode=\"regions\", resolution=\"provinces\",\n                                width=500, height=400,colorAxis=\"{colors:['#FFFFFF', '#0000FF']}\"))\n    \n  })\n})\n",
+    "created" : 1564946180232.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1453668454",
+    "id" : "67C4CF82",
+    "lastKnownWriteTime" : 1564946307,
+    "last_content_update" : 1564946307499,
+    "path" : "C:/Users/verse/Desktop/R code/shiny codes/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

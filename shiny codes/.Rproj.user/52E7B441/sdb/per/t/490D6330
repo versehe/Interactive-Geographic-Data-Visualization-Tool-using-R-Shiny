@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n################################################################\n##   You need to open in browser to see the results properly  ##\n################################################################\n\n#Requires shiny and googleevis library\nlibrary(shiny)\nlibrary (googleVis)\n\n# the following code creates the slider which we can use to change the year for each state\nshinyUI(fluidPage(\n  titlePanel(\"GSP Per Year\"),\n  sidebarPanel(sliderInput(\"YR\", \"Select Year:\", min = 1970, max = 1986, value = 500)),\n  mainPanel(\n    h3(textOutput(\"year\")), \n    htmlOutput(\"gvis\"))\n))\n\n",
+    "created" : 1564946181193.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2173762803",
+    "id" : "490D6330",
+    "lastKnownWriteTime" : 1564946979,
+    "last_content_update" : 1564946979,
+    "path" : "C:/Users/verse/Desktop/R code/shiny codes/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
